@@ -1,7 +1,407 @@
-/* style.css */
+/* style.css - ART DE LA TAILLE - Site Paysagiste */
+
+/* Variables CSS */
+:root {
+  --primary-green: #2d5016;
+  --secondary-green: #4a7c59;
+  --accent-green: #6b8e23;
+  --light-beige: #f5f5dc;
+  --warm-beige: #f0e68c;
+  --dark-brown: #8b4513;
+  --text-dark: #3e3e3e;
+  --text-light: #ffffff;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --border-radius: 8px;
+  --transition: all 0.3s ease;
+}
+
+/* Reset et base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: sans-serif;
-  background-color: #f5f5dc; /* beige clair */
-  color: #3e3e3e;
+  font-family: 'Open Sans', sans-serif;
+  background-color: var(--light-beige);
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Bandeau réduction d'impôts */
+.tax-banner {
+  background: linear-gradient(135deg, var(--accent-green), var(--secondary-green));
+  color: var(--text-light);
+  text-align: center;
+  padding: 10px 0;
+  font-weight: 600;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.tax-icon {
+  font-size: 1.2em;
+  margin-right: 8px;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+  color: var(--text-light);
+  padding: 40px 0;
+  text-align: center;
+  box-shadow: 0 4px 6px var(--shadow);
+}
+
+.logo h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.tagline {
+  font-size: 1.2rem;
+  font-weight: 300;
+  opacity: 0.9;
+  font-style: italic;
+}
+
+/* Navigation */
+.navigation {
+  background-color: var(--warm-beige);
+  padding: 15px 0;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.nav-menu a {
+  color: var(--primary-green);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  padding: 8px 16px;
+  border-radius: var(--border-radius);
+}
+
+.nav-menu a:hover {
+  background-color: var(--primary-green);
+  color: var(--text-light);
+  transform: translateY(-2px);
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(rgba(45, 80, 22, 0.7), rgba(74, 124, 89, 0.7)), 
+              url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%23f5f5dc" width="1200" height="600"/><path fill="%234a7c59" d="M0,300 Q300,200 600,300 T1200,300 L1200,600 L0,600 Z"/></svg>');
+  background-size: cover;
+  background-position: center;
+  color: var(--text-light);
+  padding: 100px 0;
+  text-align: center;
+}
+
+.hero-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.cta-button {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent-green), var(--secondary-green));
+  color: var(--text-light);
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: var(--transition);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Services Section */
+.services {
+  padding: 80px 0;
+  background-color: var(--text-light);
+}
+
+.services h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--primary-green);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.service-card {
+  background: var(--light-beige);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  transition: var(--transition);
+  border: 2px solid transparent;
+  box-shadow: 0 4px 6px var(--shadow);
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-green);
+  box-shadow: 0 8px 25px var(--shadow);
+}
+
+.service-icon {
+  font-size: 3rem;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.service-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  color: var(--primary-green);
+  margin-bottom: 15px;
+}
+
+.service-card p {
+  color: var(--text-dark);
+  line-height: 1.6;
+}
+
+/* About Section */
+.about {
+  padding: 80px 0;
+  background: linear-gradient(135deg, var(--light-beige), var(--warm-beige));
+}
+
+.about-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.about-text h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--primary-green);
+  margin-bottom: 30px;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  margin-bottom: 20px;
+  color: var(--text-dark);
+}
+
+.about-image {
+  text-align: center;
+}
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 25px var(--shadow);
+  border: 3px solid var(--accent-green);
+}
+
+/* Contact Section */
+.contact {
+  padding: 80px 0;
+  background-color: var(--text-light);
+}
+
+.contact h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 50px;
+  color: var(--primary-green);
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 50px;
+  align-items: start;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+  padding: 20px;
+  background: var(--light-beige);
+  border-radius: var(--border-radius);
+  transition: var(--transition);
+}
+
+.contact-item:hover {
+  transform: translateX(10px);
+  box-shadow: 0 4px 15px var(--shadow);
+}
+
+.contact-icon {
+  font-size: 2rem;
+  margin-right: 20px;
+  color: var(--accent-green);
+}
+
+.contact-item h3 {
+  color: var(--primary-green);
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+}
+
+.contact-item p {
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.qr-section {
+  text-align: center;
+}
+
+.qr-code {
+  background: var(--light-beige);
+  padding: 30px;
+  border-radius: var(--border-radius);
+  margin-bottom: 20px;
+  border: 2px dashed var(--accent-green);
+}
+
+.qr-placeholder {
+  width: 150px;
+  height: 150px;
+  background: var(--warm-beige);
+  border: 2px solid var(--primary-green);
+  border-radius: var(--border-radius);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  color: var(--primary-green);
+  font-weight: 600;
+}
+
+.qr-placeholder small {
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+
+/* Footer */
+.footer {
+  background: var(--primary-green);
+  color: var(--text-light);
+  text-align: center;
+  padding: 30px 0;
+}
+
+.footer p {
+  margin-bottom: 10px;
+  opacity: 0.9;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 0 15px;
+  }
+  
+  .logo h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 2.5rem;
+  }
+  
+  .nav-menu {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-content,
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .contact-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .contact-icon {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .logo h1 {
+    font-size: 2rem;
+  }
+  
+  .hero-content h2 {
+    font-size: 2rem;
+  }
+  
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+  
+  .services h2,
+  .about-text h2,
+  .contact h2 {
+    font-size: 2rem;
+  }
+  
+  .service-card {
+    padding: 20px;
+  }
+  
+  .about-text p {
+    font-size: 1rem;
+  }
 }
 
